@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NoChic — Premium haar- en baardverzorging</title>
+  <meta name="description" content="Professionele verzorgingsproducten voor een verzorgde en krachtige look. Geïnspireerd door de natuur, gemaakt voor mannen.">
+  <meta name="theme-color" content="#14100c">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@300..600&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/images/hero.jpg">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Naar inhoud</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" data-header>
+    <div class="site-header__inner container">
+      <a class="site-header__logo media media--logo" href="#top" aria-label="NoChic home" data-asset="logo.svg">
+        <img src="assets/logo.svg" alt="NoChic" width="120" height="40">
+      </a>
+
+      <nav class="site-nav" aria-label="Hoofdmenu">
+        <ul>
+          <li><a href="#top" aria-current="page">Home</a></li>
+          <li><a href="#producten">Producten</a></li>
+          <li><a href="#verhaal">Over ons</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Klantenservice</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__utils">
+        <a href="#" class="u-hide-mobile">Zoeken</a>
+        <a href="#" class="u-hide-mobile">Account</a>
+        <a href="#" class="cart-link">Mand <span class="cart-count" data-cart-count>0</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+          <span class="menu-toggle__label">Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+      <nav class="container" aria-label="Mobiel menu">
+        <ol>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#producten">Producten</a></li>
+          <li><a href="#verhaal">Over ons</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Klantenservice</a></li>
+        </ol>
+        <div class="mobile-menu__foot label">
+          <a href="#">Zoeken</a>
+          <a href="#">Account</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Chapter indicator (desktop) -->
+  <p class="chapter label" aria-hidden="true" data-chapter-indicator>
+    <span class="chapter__num" data-chapter-num>01</span>
+    <span class="chapter__line"></span>
+    <span class="chapter__name" data-chapter-name>Introductie</span>
+  </p>
+
+  <main id="main">
+
+    <!-- ============ I. HERO ============ -->
+    <section class="hero" id="top" data-chapter="01|Introductie" aria-labelledby="hero-title" data-hero>
+      <figure class="hero__frame media" data-asset="hero.jpg" data-hero-frame>
+        <img src="assets/images/hero.jpg" alt="NoChic producten — Hybrid Pomade, Xplosive Curls, Dirty Dust en Face &amp; Beard Oil — op donker hout" width="2400" height="1500" fetchpriority="high" data-hero-img>
+        <figcaption class="hero__caption">
+          <span class="label">Nº 01</span>
+          <span class="hero__caption-text">De collectie<br><span>Zes formules, één standaard</span></span>
+        </figcaption>
+      </figure>
+
+      <div class="hero__content container">
+        <p class="label hero__eyebrow"><span data-reveal>Haar &middot; Baard &middot; Styling</span></p>
+        <h1 class="hero__title display" id="hero-title" data-split data-hero-title>
+          <span class="hero__line">Care for</span>
+          <span class="hero__line">your hair,</span>
+          <span class="hero__line hero__line--indent"><em>confidence</em></span>
+          <span class="hero__line">in your&nbsp;style.</span>
+        </h1>
+        <div class="hero__foot">
+          <p class="hero__lede" data-reveal>Professionele verzorgingsproducten voor een verzorgde en krachtige look.</p>
+          <span class="hero__cta" data-reveal>
+            <a class="btn btn--gold" href="#producten" data-magnetic>
+              <span class="btn__text">Bekijk het assortiment</span>
+              <svg class="btn__arrow" viewBox="0 0 24 10" aria-hidden="true"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <p class="hero__scroll label" aria-hidden="true"><span></span>Scroll</p>
+    </section>
+
+    <!-- ============ II. SHOP — horizontal track ============ -->
+    <section class="shop" id="producten" data-chapter="02|Assortiment" aria-labelledby="shop-title" data-shop>
+      <div class="shop__pin">
+        <div class="shop__intro" data-shop-intro>
+          <p class="label label--muted"><span class="chapter-mark">II</span> Het assortiment</p>
+          <h2 class="h2 shop__title" id="shop-title" data-split>Vind jouw <em>favoriet</em></h2>
+          <div class="filters" role="toolbar" aria-label="Filter producten" data-filters>
+            <button type="button" class="filters__btn" aria-pressed="true" data-filter="all">Alle producten <sup data-count="all"></sup></button>
+            <button type="button" class="filters__btn" aria-pressed="false" data-filter="haar">Haarverzorging <sup data-count="haar"></sup></button>
+            <button type="button" class="filters__btn" aria-pressed="false" data-filter="styling">Styling <sup data-count="styling"></sup></button>
+            <button type="button" class="filters__btn" aria-pressed="false" data-filter="baard">Baardverzorging <sup data-count="baard"></sup></button>
+          </div>
+          <p class="shop__hint label label--muted" aria-hidden="true">Scroll om te ontdekken <span>&rarr;</span></p>
+        </div>
+
+        <div class="shop__track" data-track>
+
+          <article class="product" data-category="styling">
+            <div class="product__frame">
+              <a class="product__media media" href="#" data-asset="product-hybrid-pomade.jpg" data-cursor="Bekijk" aria-label="Hybrid Pomade bekijken">
+                <img class="product__img" src="assets/images/product-hybrid-pomade.jpg" alt="NoChic Hybrid Pomade, 100 ml" width="900" height="1125" loading="lazy">
+                <img class="product__img product__img--alt" src="assets/images/product-hybrid-pomade-alt.jpg" alt="" width="900" height="1125" loading="lazy" data-optional>
+              </a>
+              <button class="product__add" type="button" data-add>Toevoegen aan mand <span aria-hidden="true">+</span></button>
+            </div>
+            <div class="product__meta">
+              <span class="product__index" aria-hidden="true">01</span>
+              <div>
+                <h3 class="product__name"><a href="#">Hybrid Pomade</a></h3>
+                <p class="label label--muted">Styling &mdash; 100 ml / 3.5 oz</p>
+              </div>
+              <p class="product__price">€ [prijs]</p>
+            </div>
+          </article>
+
+          <article class="product" data-category="styling">
+            <div class="product__frame">
+              <a class="product__media media" href="#" data-asset="product-slick-pomade.jpg" data-cursor="Bekijk" aria-label="Slick Pomade bekijken">
+                <img class="product__img" src="assets/images/product-slick-pomade.jpg" alt="NoChic Slick Pomade, 100 ml" width="900" height="1125" loading="lazy">
+                <img class="product__img product__img--alt" src="assets/images/product-slick-pomade-alt.jpg" alt="" width="900" height="1125" loading="lazy" data-optional>
+              </a>
+              <button class="product__add" type="button" data-add>Toevoegen aan mand <span aria-hidden="true">+</span></button>
+            </div>
+            <div class="product__meta">
+              <span class="product__index" aria-hidden="true">02</span>
+              <div>
+                <h3 class="product__name"><a href="#">Slick Pomade</a></h3>
+                <p class="label label--muted">Styling &mdash; 100 ml / 3.5 oz</p>
+              </div>
+              <p class="product__price">€ [prijs]</p>
+            </div>
+          </article>
+
+          <article class="product" data-category="haar">
+            <div class="product__frame">
+              <a class="product__media media" href="#" data-asset="product-xplosive-curls.jpg" data-cursor="Bekijk" aria-label="Xplosive Curls bekijken">
+                <img class="product__img" src="assets/images/product-xplosive-curls.jpg" alt="NoChic Xplosive Curls, 180 ml" width="900" height="1125" loading="lazy">
+                <img class="product__img product__img--alt" src="assets/images/product-xplosive-curls-alt.jpg" alt="" width="900" height="1125" loading="lazy" data-optional>
+              </a>
+              <button class="product__add" type="button" data-add>Toevoegen aan mand <span aria-hidden="true">+</span></button>
+            </div>
+            <div class="product__meta">
+              <span class="product__index" aria-hidden="true">03</span>
+              <div>
+                <h3 class="product__name"><a href="#">Xplosive Curls</a></h3>
+                <p class="label label--muted">Haarverzorging &mdash; 180 ml / 3.5 oz</p>
+              </div>
+              <p class="product__price">€ [prijs]</p>
+            </div>
+          </article>
+
+          <article class="product" data-category="baard">
+            <div class="product__frame">
+              <a class="product__media media" href="#" data-asset="product-face-beard-oil.jpg" data-cursor="Bekijk" aria-label="Face &amp; Beard Oil bekijken">
+                <img class="product__img" src="assets/images/product-face-beard-oil.jpg" alt="NoChic Face &amp; Beard Oil, 100 ml" width="900" height="1125" loading="lazy">
+                <img class="product__img product__img--alt" src="assets/images/product-face-beard-oil-alt.jpg" alt="" width="900" height="1125" loading="lazy" data-optional>
+              </a>
+              <button class="product__add" type="button" data-add>Toevoegen aan mand <span aria-hidden="true">+</span></button>
+            </div>
+            <div class="product__meta">
+              <span class="product__index" aria-hidden="true">04</span>
+              <div>
+                <h3 class="product__name"><a href="#">Face &amp; Beard Oil</a></h3>
+                <p class="label label--muted">Baardverzorging &mdash; 100 ml / 3.5 oz</p>
+              </div>
+              <p class="product__price">€ [prijs]</p>
+            </div>
+          </article>
+
+          <a class="shop__end" href="#" data-magnetic>
+            <span class="label label--muted">Alle producten</span>
+            <span class="shop__end-title">Bekijk het volledige <em>assortiment</em></span>
+            <svg viewBox="0 0 24 10" aria-hidden="true"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+          </a>
+        </div>
+
+        <div class="shop__progress" aria-hidden="true"><span data-shop-progress></span></div>
+      </div>
+    </section>
+
+    <!-- ============ III. STORY ============ -->
+    <section class="story theme-dark" id="verhaal" data-chapter="03|Ons verhaal" aria-labelledby="story-title" data-story>
+      <div class="container">
+        <p class="label label--gold story__label"><span class="chapter-mark">III</span> Ons verhaal</p>
+        <h2 class="story__quote" id="story-title" data-scrub-words>
+          De beste pomade in de markt zetten&hellip; <em>nog een merk erbij?</em> Nou, het was nodig.
+        </h2>
+
+        <div class="story__body">
+          <div class="story__text" data-reveal>
+            <span class="story__rule" aria-hidden="true"></span>
+            <p>De meeste waxen zijn lastig uit te wassen. Wij liepen daar zelf elke ochtend tegenaan &mdash; en hebben het dan maar zelf opgelost. Geen compromis tussen een stevige hold en een schone hoofdhuid.</p>
+            <p class="label label--muted">&mdash; Het NoChic team</p>
+          </div>
+
+          <figure class="story__main media" data-asset="story-hybrid-pomade.jpg" data-clip-reveal>
+            <img src="assets/images/story-hybrid-pomade.jpg" alt="Geopende tin Hybrid Pomade op een houten blok" width="1200" height="1500" loading="lazy">
+          </figure>
+
+          <figure class="story__detail media" data-asset="story-detail.jpg" data-float="-18">
+            <img src="assets/images/story-detail.jpg" alt="Geopende tin Slick Pomade van bovenaf" width="800" height="1000" loading="lazy">
+          </figure>
+
+          <div class="story__product" data-reveal>
+            <p class="label label--gold">Hybrid Pomade</p>
+            <p>Ervaar de vaste kracht van Hybrid Pomade, die je haar tegelijk versterkt. Voor een strakke, glanzende look die de hele dag blijft zitten.</p>
+            <a class="link-arrow link-arrow--light" href="#">Shop nu
+              <svg viewBox="0 0 24 10" aria-hidden="true"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IV. CAMPAIGN ============ -->
+    <section class="campaign" data-chapter="04|Face &amp; Beard Oil" aria-labelledby="campaign-title" data-campaign>
+      <div class="campaign__inner container">
+        <div class="campaign__intro">
+          <p class="label label--muted"><span class="chapter-mark">IV</span> Baardverzorging</p>
+          <p class="campaign__claim" data-split>Gemaakt zodat jij een gezonde en schone look&nbsp;krijgt.</p>
+        </div>
+
+        <ol class="campaign__steps" data-campaign-steps>
+          <li><span class="label">01</span>Apply with confidence</li>
+          <li><span class="label">02</span>Absorb and protect</li>
+          <li><span class="label">03</span>Layer with confidence</li>
+        </ol>
+
+        <h2 class="campaign__word" id="campaign-title" aria-label="Face &amp; Beard Oil">
+          <span class="campaign__word-a" aria-hidden="true" data-word-a>Face <em>&amp;</em></span>
+          <span class="campaign__word-b" aria-hidden="true" data-word-b>Beard Oil</span>
+        </h2>
+
+        <figure class="campaign__product media media--cutout" data-asset="face-beard-oil-cutout.png" data-campaign-product>
+          <img src="assets/images/face-beard-oil-cutout.png" alt="NoChic Face &amp; Beard Oil met pipet" width="900" height="1400" loading="lazy">
+        </figure>
+
+        <p class="campaign__desc">Ervaar de verzachtende kracht van amandelolie, die je huid en baard tegelijk verzorgt. Trekt snel in, voelt niet vet en laat een subtiele, houtige geur achter.</p>
+
+        <div class="campaign__buy">
+          <p class="label label--muted">100 ml / 3.5 oz &mdash; € [prijs]</p>
+          <a class="btn btn--dark" href="#" data-magnetic>
+            <span class="btn__text">Ontdek Face &amp; Beard Oil</span>
+            <svg class="btn__arrow" viewBox="0 0 24 10" aria-hidden="true"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ V. REVIEWS ============ -->
+    <section class="reviews" data-chapter="05|Reviews" aria-labelledby="reviews-title" data-reviews>
+      <div class="container reviews__grid">
+        <div class="reviews__aside">
+          <p class="label label--muted"><span class="chapter-mark">V</span> Reviews</p>
+          <h2 class="reviews__title" id="reviews-title" data-split>Wat onze klanten zeggen</h2>
+          <div class="reviews__nav" data-review-nav hidden>
+            <button type="button" class="reviews__btn" data-review-prev aria-label="Vorige review">&larr;</button>
+            <p class="reviews__count label"><span data-review-current>01</span> / <span data-review-total>01</span></p>
+            <button type="button" class="reviews__btn" data-review-next aria-label="Volgende review">&rarr;</button>
+          </div>
+          <a class="link-arrow" href="#">Bekijk alle reviews
+            <svg viewBox="0 0 24 10" aria-hidden="true"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </div>
+
+        <!-- Placeholder-review uit het ontwerp. Voeg echte reviews toe als extra <li>; de navigatie verschijnt automatisch bij meer dan één. -->
+        <ul class="reviews__list" data-review-list aria-live="polite">
+          <li class="review is-active">
+            <p class="review__stars" aria-label="5 van 5 sterren">★★★★★</p>
+            <blockquote class="review__quote"><p>&ldquo;Top kwaliteit en snelle levering! Ik ben super tevreden.&rdquo;</p></blockquote>
+            <p class="review__author"><span>Ruben J.</span> <span class="label label--muted">Rotterdam</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ VI. CLOSING ============ -->
+    <section class="closing theme-dark" data-chapter="06|NoChic" aria-labelledby="closing-title" data-closing>
+      <figure class="closing__media media" data-asset="closing-workshop.jpg" data-closing-media>
+        <img src="assets/images/closing-workshop.jpg" alt="" width="2400" height="1400" loading="lazy">
+      </figure>
+      <div class="closing__shade" aria-hidden="true"></div>
+      <div class="container closing__inner">
+        <h2 class="closing__title display" id="closing-title">
+          <span class="closing__line" data-closing-a>Inspired by nature.</span>
+          <span class="closing__line closing__line--b" data-closing-b><em>Made for men.</em></span>
+        </h2>
+        <div class="closing__aside" data-reveal>
+          <p>Krachtige formules, geïnspireerd door de natuur en gemaakt voor mannen die weten wat ze willen.</p>
+          <a class="btn btn--gold" href="#producten" data-magnetic>
+            <span class="btn__text">Bekijk het assortiment</span>
+            <svg class="btn__arrow" viewBox="0 0 24 10" aria-hidden="true"><path d="M0 5h22M18 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer theme-dark">
+    <div class="container">
+      <div class="site-footer__news">
+        <h2 class="site-footer__headline" data-split>Stylingtips &amp; nieuwe producten, <em>als eerste.</em></h2>
+        <form class="newsletter" data-newsletter novalidate>
+          <label class="u-sr-only" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" name="email" placeholder="Je e-mailadres" autocomplete="email" required>
+          <button type="submit" data-magnetic>Aanmelden <span aria-hidden="true">&rarr;</span></button>
+        </form>
+        <p class="newsletter__status label" role="status" data-newsletter-status></p>
+      </div>
+
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a class="media media--logo site-footer__logo" href="#top" aria-label="NoChic home" data-asset="logo.svg">
+            <img src="assets/logo.svg" alt="NoChic" width="140" height="46" loading="lazy">
+          </a>
+          <p>Premium haircare &amp; grooming voor een verzorgde en krachtige look.</p>
+        </div>
+
+        <nav class="site-footer__col" aria-label="Shop">
+          <h3 class="label label--gold">Shop</h3>
+          <ul>
+            <li><a href="#">Alle producten</a></li>
+            <li><a href="#">Haar</a></li>
+            <li><a href="#">Baard</a></li>
+            <li><a href="#">Sets &amp; cadeaus</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-label="Informatie">
+          <h3 class="label label--gold">Informatie</h3>
+          <ul>
+            <li><a href="#">Over ons</a></li>
+            <li><a href="#">Journaal</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Verzending &amp; retour</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-label="Hulp">
+          <h3 class="label label--gold">Hulp</h3>
+          <ul>
+            <li><a href="#">Klantenservice</a></li>
+            <li><a href="#">Bestelling volgen</a></li>
+            <li><a href="#">Algemene voorwaarden</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; <span data-year>2026</span> NoChic. Alle rechten voorbehouden.</p>
+        <p class="site-footer__pay">iDEAL &middot; Bancontact &middot; Creditcard &middot; PayPal</p>
+        <a class="site-footer__top" href="#top">Terug naar boven <span aria-hidden="true">&uarr;</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor" aria-hidden="true" data-cursor-el><span data-cursor-label>Bekijk</span></div>
+  <div class="toast label" role="status" aria-live="polite" data-toast></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
