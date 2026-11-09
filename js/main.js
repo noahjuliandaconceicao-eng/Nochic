@@ -61,9 +61,10 @@
   const header = $('[data-header]');
   let lastY = window.scrollY;
   let ticking = false;
+  const alwaysSolid = header.hasAttribute('data-solid');
   const onScroll = () => {
     const y = window.scrollY;
-    header.classList.toggle('is-solid', y > 40);
+    header.classList.toggle('is-solid', alwaysSolid || y > 40);
     if (!root.classList.contains('menu-open')) header.classList.toggle('is-hidden', y > lastY && y > 400);
     lastY = y;
     ticking = false;
@@ -158,9 +159,9 @@
   const products = $$('[data-track] .product');
   const counts = { all: products.length };
   products.forEach((p) => { counts[p.dataset.category] = (counts[p.dataset.category] || 0) + 1; });
-  $$('[data-count]', filterBar).forEach((s) => { s.textContent = String(counts[s.dataset.count] || 0).padStart(2, '0'); });
+  if (filterBar) $$('[data-count]', filterBar).forEach((s) => { s.textContent = String(counts[s.dataset.count] || 0).padStart(2, '0'); });
 
-  filterBar.addEventListener('click', (e) => {
+  filterBar?.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-filter]');
     if (!btn || btn.getAttribute('aria-pressed') === 'true') return;
     $$('[data-filter]', filterBar).forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
@@ -182,10 +183,46 @@
     }));
   });
 
-  /* ---------- Cart (demo) + toast ---------- */
+  // producten.html?categorie=haar opens with that filter selected
+  if (filterBar) {
+    const wanted = new URLSearchParams(window.location.search).get('categorie');
+    $(`[data-filter="${CSS.escape(wanted || '')}"]`, filterBar)?.click();
+  }
+
+  /* ---------- Prices: filled from js/products.js once they are set there ---------- */
+  const catalog = window.NOCHIC_PRODUCTS || [];
+  const findProduct = (slug) => catalog.find((p) => p.slug === slug);
+  const formatPrice = (value) => `€ ${value.toFixed(2).replace('.', ',')}`;
+  $$('[data-price]').forEach((el) => {
+    const price = findProduct(el.dataset.price)?.price;
+    if (typeof price === 'number') el.textContent = formatPrice(price);
+  });
+
+  /* ---------- Cart (kept in this browser) + toast ---------- */
+  const CART_KEY = 'nochic-cart';
   const countEl = $('[data-cart-count]');
   const toast = $('[data-toast]');
-  let cart = 0;
+  const readCart = () => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(CART_KEY)) || {};
+      return Object.fromEntries(Object.entries(saved).filter(([slug, qty]) => findProduct(slug) && qty > 0));
+    } catch { return {}; }
+  };
+  let cart = readCart();
+  const cartTotalCount = () => Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+  const saveCart = () => {
+    try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch { /* cart then lasts for this page only */ }
+    countEl.textContent = cartTotalCount();
+  };
+  countEl.textContent = cartTotalCount();
+  window.NoChicCart = {
+    items: () => ({ ...cart }),
+    setQuantity: (slug, qty) => {
+      if (qty > 0) cart[slug] = qty; else delete cart[slug];
+      saveCart();
+    },
+    formatPrice,
+  };
   let toastTimer;
   const showToast = (msg) => {
     toast.textContent = msg;
@@ -195,19 +232,19 @@
   };
   $$('[data-add]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      cart += 1;
-      countEl.textContent = cart;
+      const slugs = btn.dataset.add.split(',');
+      slugs.forEach((slug) => { cart[slug] = (cart[slug] || 0) + 1; });
+      saveCart();
       countEl.classList.remove('is-bumped');
       void countEl.offsetWidth;
       countEl.classList.add('is-bumped');
-      const name = $('.product__name', btn.closest('.product')).textContent.trim();
-      showToast(`${name} toegevoegd aan je mand`);
+      showToast(slugs.length > 1 ? 'Set toegevoegd aan je mand' : `${findProduct(slugs[0]).name} toegevoegd aan je mand`);
     });
   });
 
   /* ---------- Reviews ---------- */
   const reviewList = $('[data-review-list]');
-  const reviews = [...reviewList.children];
+  const reviews = reviewList ? [...reviewList.children] : [];
   if (reviews.length > 1) {
     const nav = $('[data-review-nav]');
     const cur = $('[data-review-current]');
@@ -291,7 +328,8 @@
   const mm = gsap.matchMedia();
 
   /* ----- Desktop: pinned scenes ----- */
-  mm.add('(min-width: 1024px)', () => {
+  const isHome = Boolean($('[data-hero]'));
+  if (isHome) mm.add('(min-width: 1024px)', () => {
     /* I. Hero — framed image opens to full bleed */
     const hero = $('[data-hero]');
     const frame = $('[data-hero-frame]');
@@ -365,7 +403,7 @@
   });
 
   /* ----- All sizes ----- */
-  mm.add('all', () => {
+  if (isHome) mm.add('all', () => {
     /* III. Story — the dark panel widens into place */
     const story = $('[data-story]');
     gsap.fromTo(story, { clipPath: 'inset(0% 4% 0% 4%)' }, {

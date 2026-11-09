@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy — NoChic</title>
+  <meta name="description" content="Hoe NoChic omgaat met je persoonsgegevens.">
+  <meta name="theme-color" content="#14100c">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@300..600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Naar inhoud</a>
+
+  <header class="site-header" data-header data-solid>
+    <div class="site-header__inner container">
+      <a class="site-header__logo media media--logo" href="index.html" aria-label="NoChic home" data-asset="logo.png">
+        <img src="assets/logo.png" alt="NoChic" width="419" height="240">
+      </a>
+
+      <nav class="site-nav" aria-label="Hoofdmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="producten.html">Producten</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="klantenservice.html">Klantenservice</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__utils">
+        <a href="zoeken.html" class="u-hide-mobile">Zoeken</a>
+        <a href="account.html" class="u-hide-mobile">Account</a>
+        <a href="mand.html" class="cart-link">Mand <span class="cart-count" data-cart-count>0</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+          <span class="menu-toggle__label">Menu</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+      <nav class="container" aria-label="Mobiel menu">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="producten.html">Producten</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="klantenservice.html">Klantenservice</a></li>
+        </ol>
+        <div class="mobile-menu__foot label">
+          <a href="zoeken.html">Zoeken</a>
+          <a href="account.html">Account</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-intro theme-dark page-intro--compact">
+      <div class="container page-intro__grid">
+        <div class="page-intro__text">
+          <p class="label page-intro__label">Juridisch</p>
+          <h1 class="page-intro__title display" data-split>Privacy<em>verklaring</em></h1>
+          
+        </div>
+        
+      </div>
+    </section>
+    <section class="page-section">
+      <div class="container">
+<div class="prose"><p class="notice">Concepttekst. Laat deze pagina juridisch controleren en vul de gegevens tussen haken aan voordat de site live gaat.</p>
+<h2>Wie is verantwoordelijk?</h2>
+<p>[Bedrijfsnaam], handelend onder de naam NoChic, [adres], is verantwoordelijk voor de verwerking van je persoonsgegevens. Vragen stel je via [e-mailadres].</p>
+<h2>Welke gegevens we gebruiken</h2>
+<table>
+<thead><tr><th>Doel</th><th>Gegevens</th><th>Grondslag</th><th>Bewaartermijn</th></tr></thead>
+<tbody>
+<tr><td>Bestelling afhandelen</td><td>Naam, adres, e-mail, bestelgegevens, betaalstatus</td><td>Uitvoering overeenkomst</td><td>7 jaar (wettelijke bewaarplicht administratie)</td></tr>
+<tr><td>Vragen beantwoorden</td><td>Naam, e-mail, inhoud bericht</td><td>Gerechtvaardigd belang</td><td>[termijn]</td></tr>
+<tr><td>Nieuwsbrief</td><td>E-mailadres</td><td>Toestemming</td><td>Tot je je afmeldt</td></tr>
+</tbody></table>
+<h2>Delen met anderen</h2>
+<p>We delen gegevens alleen als dat nodig is, bijvoorbeeld met de betaalprovider [naam], de vervoerder [naam] en de hostingpartij [naam]. Met verwerkers sluiten we een verwerkersovereenkomst.</p>
+<h2>Winkelmand en externe diensten</h2>
+<p>Je winkelmand wordt alleen in je eigen browser bewaard. De site laadt lettertypen van Google Fonts en scripts van cdnjs en unpkg. Daarbij wordt je IP-adres aan die partijen doorgegeven.</p>
+<h2>Je rechten</h2>
+<p>Je hebt het recht op inzage, correctie, verwijdering, beperking, bezwaar en overdracht van je gegevens. Een verzoek stuur je naar [e-mailadres]. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer theme-dark">
+    <div class="container">
+      <div class="site-footer__news">
+        <h2 class="site-footer__headline" data-split>Stylingtips &amp; nieuwe producten, <em>als eerste.</em></h2>
+        <form class="newsletter" data-newsletter novalidate>
+          <label class="u-sr-only" for="nl-email">E-mailadres</label>
+          <input id="nl-email" type="email" name="email" placeholder="Je e-mailadres" autocomplete="email" required>
+          <button type="submit" data-magnetic>Aanmelden <span aria-hidden="true">&rarr;</span></button>
+        </form>
+        <p class="newsletter__status label" role="status" data-newsletter-status></p>
+      </div>
+
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a class="media media--logo site-footer__logo" href="index.html" aria-label="NoChic home" data-asset="logo.png">
+            <img src="assets/logo.png" alt="NoChic" width="419" height="240" loading="lazy">
+          </a>
+          <p>Premium haircare &amp; grooming voor een verzorgde en krachtige look.</p>
+        </div>
+
+        <nav class="site-footer__col" aria-label="Shop">
+          <h3 class="label label--gold">Shop</h3>
+          <ul>
+            <li><a href="producten.html">Alle producten</a></li>
+            <li><a href="producten.html?categorie=haar">Haar</a></li>
+            <li><a href="producten.html?categorie=baard">Baard</a></li>
+            <li><a href="sets-cadeaus.html">Sets &amp; cadeaus</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-label="Informatie">
+          <h3 class="label label--gold">Informatie</h3>
+          <ul>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="blog.html">Journaal</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="verzending-retour.html">Verzending &amp; retour</a></li>
+          </ul>
+        </nav>
+        <nav class="site-footer__col" aria-label="Hulp">
+          <h3 class="label label--gold">Hulp</h3>
+          <ul>
+            <li><a href="klantenservice.html">Klantenservice</a></li>
+            <li><a href="bestelling-volgen.html">Bestelling volgen</a></li>
+            <li><a href="algemene-voorwaarden.html">Algemene voorwaarden</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; <span data-year>2026</span> NoChic. Alle rechten voorbehouden.</p>
+        <p class="site-footer__pay">iDEAL &middot; Bancontact &middot; Creditcard &middot; PayPal</p>
+        <a class="site-footer__top" href="#top">Terug naar boven <span aria-hidden="true">&uarr;</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor" aria-hidden="true" data-cursor-el><span data-cursor-label>Bekijk</span></div>
+  <div class="toast label" role="status" aria-live="polite" data-toast></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -242,7 +242,7 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
   gap: var(--s-6);
 }
 .site-header__logo { justify-self: start; display: inline-block; }
-.site-header__logo img { width: auto; height: 34px; }
+.site-header__logo img { width: auto; height: 48px; }
 
 .site-nav ul { display: flex; gap: clamp(20px, 2.4vw, 40px); }
 .site-nav a, .site-header__utils a, .menu-toggle {
@@ -340,6 +340,14 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
   padding-top: var(--s-4);
   border-top: 1px solid rgba(244, 239, 231, 0.3);
   min-width: 220px;
+}
+.hero__caption::before {
+  /* keeps the caption legible over the busy lower part of the photo */
+  content: "";
+  position: absolute; z-index: -1;
+  top: -72px; bottom: calc(-1 * (var(--pad) + var(--s-5))); left: -100vw; right: -100vw;
+  background: linear-gradient(0deg, rgba(15, 12, 9, 0.82) 0%, rgba(15, 12, 9, 0.55) 55%, rgba(15, 12, 9, 0) 100%);
+  pointer-events: none;
 }
 .hero__caption .label { color: var(--gold-soft); padding-top: 4px; }
 .hero__caption-text { font-size: 1.25rem; line-height: 1.2; }
@@ -725,9 +733,13 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
   background: linear-gradient(0deg, rgba(15, 12, 9, 0.85) 0%, rgba(15, 12, 9, 0.3) 55%, rgba(15, 12, 9, 0.45) 100%);
   pointer-events: none;
 }
+.closing__media img { object-position: 72% 50%; }
+/* tall screens: stack text and title at the bottom so neither covers the face */
+@media (max-width: 1023px) { .closing .closing__inner { justify-content: flex-start; } }
 .closing__inner {
   position: relative;
-  display: flex; flex-direction: column; justify-content: space-between;
+  /* title sits at the bottom, on the darkest part of the shade and clear of the model's face */
+  display: flex; flex-direction: column-reverse; justify-content: space-between;
   gap: var(--s-8);
   padding-block: calc(var(--header-h) + var(--s-7)) var(--pad);
   color: var(--cream);
@@ -792,7 +804,7 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
   border-top: 1px solid var(--line-light);
 }
 .site-footer__logo { display: inline-block; margin-bottom: var(--s-5); }
-.site-footer__logo img { width: auto; height: 44px; }
+.site-footer__logo img { width: auto; height: 72px; }
 .site-footer__brand p { color: var(--muted-light); max-width: 28ch; }
 .site-footer h3 { margin-bottom: var(--s-5); }
 .site-footer__col li + li { margin-top: var(--s-3); }
@@ -895,7 +907,7 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 @media (max-width: 760px) {
   :root { --header-h: 64px; }
   .u-hide-mobile { display: none; }
-  .site-header__logo img { height: 28px; }
+  .site-header__logo img { height: 38px; }
 
   .hero__title { font-size: 15vw; }
   .hero__line--indent { padding-left: 0.8em; }
@@ -920,3 +932,34 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
   }
   .js [data-reveal], .js [data-split] .w > span { opacity: 1; transform: none; }
 }
+
+/* ---------- Royal Signage: large headings only ----------
+   One upright style, so emphasis in these headings is gold rather than italic. */
+@font-face {
+  font-family: "Royal Signage";
+  src: url("../assets/RoyalSignage-Rg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root { --font-heading: "Royal Signage", var(--font-display); }
+
+.display, .h2, .story__quote, .campaign__word, .shop__end-title, .reviews__title, .site-footer__headline {
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+/* The ornate capitals reach well beyond the line box, so they need more room */
+.display { line-height: 1.08; }
+.h2 { line-height: 1.14; }
+.story__quote { line-height: 1.2; }
+.site-footer__headline { line-height: 1.16; }
+.reviews__title { line-height: 1.2; letter-spacing: 0; }
+.js .display[data-split] .w, .js .h2[data-split] .w, .js .site-footer__headline[data-split] .w, .js .reviews__title[data-split] .w {
+  padding: 0.3em 0.2em 0.3em;
+  margin: -0.3em -0.2em -0.3em;
+}
+@media (max-width: 1023px) { .campaign__word { font-size: 16vw; line-height: 1.05; } }
+@media (min-width: 1024px) { .hero__title { font-size: clamp(3.25rem, min(7.8vw, 11.6vh), 9.5rem); } }
+
+.display em, .h2 em, .story__quote em, .campaign__word em,
+.closing__line--b em, .shop__end-title em, .site-footer__headline em { font-style: normal; }
